@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Reedem</title>
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+
+    <meta name="title" content="">
+    <meta name="description" content="" />
+
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+  </head>
+<body class="yellow">
+<section class="main-reedem">
+    <div class="container">
+        <div class="form-box">
+          <div class="form-sec pb-4 mt-4">
+            <div class="d-none d-md-block">
+              <img src="images/banner-desktop.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="d-block d-md-none">
+              <img src="images/banner-mobile.jpg" alt="" class="img-fluid">
+            </div>
+            <h1 class="text-center text-uppercase">Reedem</h1>
+            <form action="POST" class="login-form mt-2" id="form">
+              <div class="register">
+                <div class="form-group">
+                  <select class="form-control" name="select_slab" id="select_slab" style="width: 100%;">
+                    <option value=""></option>
+                  </select>
+                  <label class="form-control-placeholder" for="select_slab">Select Slab</label>
+                  <span class="error d-block"></span>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" name="select_distrributor" id="select_distrributor" style="width: 100%;">
+                    <option value=""></option>
+                  </select>
+                  <label class="form-control-placeholder" for="select_distrributor">Select Distrributor</label>
+                  <span class="error d-block"></span>
+                </div>
+                <div class="form-group">
+                  <div class="faq_block">
+                    <div class="row"> 
+                      <div class="col-12 col-md-3">
+                        <div class="form-group">
+                          <input type="text" name="invoice_val" id="invoice_val" class="form-control" >
+                          <label class="form-control-placeholder" for="invoice_val">Invoice value</label>
+                        </div>
+                      </div>                                        
+                      <div class="col-12 col-md-3">
+                        <div class="form-group">
+                          <input type="text" name="invoice" id="invoice" class="form-control" >
+                          <label class="form-control-placeholder" for="invoice">Invoice</label>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-3">
+                        <div class="input-group mb-1">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          </div>
+                        </div>
+                        <span class="img-only mb-2 d-block">Image only</span>
+                      </div>
+                      <div class="col-md-3">
+                          <a class="btn btn-danger w-100 mb-3 mb-md-0" id="btnRemove" href="javascript:void(0);">Remove</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-md-flex justify-content-md-between mt-4 text-center action-btn">
+                  <div class="filter-btn-block mb-3 mb-md-0">
+                    <input value="Add Redeem" id="add_new_filter" type="button" name="reedem" class="btn btn-yellow">
+                  </div>
+                  <input value="Save & Redeem" type="button" name="save" id="save" class="btn btn-yellow" data-toggle="modal" data-target="#myModal">                                  
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+</section>
+
+<div class="sample-invoice-block d-none">
+  <div class="row"> 
+    <div class="col-12 col-md-3">
+      <div class="form-group">
+        <input type="text" name="invoice_val" id="invoice_val" class="form-control" >
+        <label class="form-control-placeholder" for="invoice_val">Invoice value</label>
+      </div>
+    </div>                                        
+    <div class="col-12 col-md-3">
+      <div class="form-group">
+        <input type="text" name="invoice" id="invoice" class="form-control" >
+        <label class="form-control-placeholder" for="invoice">Invoice</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="input-group mb-1">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div>
+      <span class="img-only mb-2 d-block">Image only</span>
+    </div>
+    <div class="col-md-3">
+        <a class="btn btn-danger w-100 mb-3 mb-md-0" id="btnRemove" href="javascript:void(0);">Remove</a>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Address Informtion</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <textarea class="form-control" rows="2" id="address"></textarea>
+            <label class="form-control-placeholder" for="address">Address line 1</label>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="2" id="address2"></textarea>
+            <label class="form-control-placeholder" for="address2">Address line 2</label>
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="State" id="State" style="width: 100%;">
+              <option value=""></option>
+            </select>
+            <label class="form-control-placeholder" for="State">Select State</label>
+            <span class="error d-block"></span>
+          </div>
+          <div class="form-group">
+            <input type="text" name="city" id="city" class="form-control" >
+            <label class="form-control-placeholder" for="city">City</label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="pincode" id="pincode" class="form-control" >
+            <label class="form-control-placeholder" for="pincode">Pincode</label>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+</body>
+</html>
